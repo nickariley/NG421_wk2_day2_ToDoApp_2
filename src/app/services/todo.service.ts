@@ -13,14 +13,14 @@ export class TodoService {
 
    }
 
-  addTodo(title: string):void {
+  addTodo(title: string): void {
     this.todoList.push({
       id: this.todoId++,
       description: ''
     });
 
   }
-  deleteTodo(todo:ITodo) {
+  deleteTodo(todo: ITodo) {
     const index = this.todoList.findIndex(todoItem => todoItem === todo);
     this.todoList.splice(index, 1);
   }
