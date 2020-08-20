@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ITodo} from '../interfaces/itodo';
 import { TodoService } from '../services/todo.service';
 
 @Component({
@@ -10,7 +11,10 @@ export class TodoListComponent implements OnInit {
 
   constructor(private todoService: TodoService) { }
 
+  todoList;
+
   ngOnInit() {
+    this.todoList = this.todoService.getTodos();
   }
 
 }

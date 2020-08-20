@@ -6,8 +6,9 @@ import { ITodo } from '../interfaces/itodo';
 })
 export class TodoService {
 
-  todoList: ITodo [] = [{ id: 1, description: ''}];
-  todoId = 0;
+  todoList: ITodo [] = [{ id: 0, description: ''}];
+  description = '';
+  todoId = 1;
 
   constructor() {
 
@@ -18,7 +19,8 @@ export class TodoService {
       id: this.todoId++,
       description: ''
     });
-
+    this.description = '';
+    this.todoId++;
   }
   deleteTodo(todo: ITodo) {
     const index = this.todoList.findIndex(todoItem => todoItem === todo);
