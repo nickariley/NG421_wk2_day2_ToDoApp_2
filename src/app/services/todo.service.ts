@@ -6,18 +6,21 @@ import { ITodo } from '../interfaces/itodo';
 })
 export class TodoService {
 
-  todoList: ITodo [] = [{ id: 0, description: ''}];
-  description = '';
+  description: string;
   todoId = 1;
+
+  todoList: ITodo [] = [//{ id: 0, description: 'asdfasdf'}
+];
+
 
   constructor() {
 
    }
 
-  addTodo(title: string): void {
+  addTodo(description: string): void {
     this.todoList.push({
-      id: this.todoId++,
-      description: ''
+      id: this.todoId,
+      description
     });
     this.description = '';
     this.todoId++;
