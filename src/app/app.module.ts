@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TodoComponent } from './components/todo.component';
 import { CreateTodoComponent } from './components/create-todo.component';
 import { TodoListComponent } from './components/todo-list.component';
+import { ConfirmationModalComponent } from './confirmation-modal/confirmation-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
     CreateTodoComponent,
-    TodoListComponent
+    TodoListComponent,
+    ConfirmationModalComponent
   ],
   imports: [
     BrowserModule,
