@@ -27,12 +27,17 @@ export class TodoService {
     this.description = '';
     this.todoId++;
   }
-  deleteTodo(todo: ITodo) {
+  async deleteTodo(todo: ITodo) {
     const modal = this.modalService.open(ConfirmationModalComponent);
     modal.componentInstance.modalInstance = modal;
 
-    const index = this.todoList.findIndex(todoItem => todoItem === todo);
-    this.todoList.splice(index, 1);
+    const answer = await modal.result;
+
+    if (answer === 'yes') {
+      const index = this.todoList.findIndex(todoItem => todoItem === todo);
+      this.todoList.splice(index, 1);
+    }
+
   }
 
   getTodos(): ITodo[] {
