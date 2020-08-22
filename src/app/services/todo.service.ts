@@ -31,7 +31,13 @@ export class TodoService {
     const modal = this.modalService.open(ConfirmationModalComponent);
     modal.componentInstance.modalInstance = modal;
 
-    const answer = await modal.result;
+    let answer = 'no';
+    try {
+      answer = await modal.result;
+    } catch (error) {
+      console.log('modal did not return anything')
+    }
+
 
     if (answer === 'yes') {
       const index = this.todoList.findIndex(todoItem => todoItem === todo);
