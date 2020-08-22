@@ -30,6 +30,7 @@ export class TodoService {
   deleteTodo(todo: ITodo) {
     const modal = this.modalService.open(ConfirmationModalComponent);
     modal.componentInstance.modalInstance = modal;
+
     const index = this.todoList.findIndex(todoItem => todoItem === todo);
     this.todoList.splice(index, 1);
   }
